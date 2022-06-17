@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <h2>Login Page</h2><br>    
+    <div class="login">    
+    <form id="login" method="get" action="login.php">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br>
+        <input type="checkbox" id="check">    
+        <span>Remember me</span>    
+        <br></br>     
+        <input type="button" name="log" id="log" value="Log In Here">
+        <br></br>
+        <button id="sin"><a href="signup.html">If Dont have account click here</a></button>
+
+        <br></br>       
+        Forgot <a href="#">Password</a>    
+    </form>     
+
+</div>
+   
+</body>
+</html>
+<script>
+    var arr=JSON.parse(localStorage.getItem("data"))||[]
+    document.querySelector("form").addEventListener("click",myfun);
+    function myfun(event){ 
+    let id=document.querySelector("#Uname").value
+    let Pass=document.querySelector("#pass").value
+    let a1=document.querySelector("#log").value
+    if(arr==id||pass){
+        a1.innerText="login succesfull"
+    }else if(arr==null){
+        a1.innerText="Incorrect Id Or Password"
+    }
+}
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-bg">
+            <div class="left-side"></div>
+            <div class="right-side"></div>
+        </div>
+        <header>
+            <nav class="fle space">
+                <div class="left fle items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png" alt="">
+                    <ul class="fle items-center justify-center upper">
+                        <li class="active fle items-center justify-center"><a href="#">Men</a>
+                        <div class="s-menu">
+                        
+                            
+                        </div>
+                        </li>
+                        <li><a href="shopping.html">Women</a></li>
+                        <li><a href="#">kids</a></li>
+                        <li><a href="#">Home & Living</a></li>
+                        <li><a href="#">Beauty</a></li>
+                        <li><a href="#">Studio</a></li>
+                    </ul>
+                </div>
+                <div class="right fle items-center">
+                    <input class="riin" type="text" placeholder="Search for products, brands and more">
+                    <div class="profile mr2"><a href="login.html">Profile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+                    <div class="bag mr2">Bag</div>
+    
+                </div>
+            </nav>
+    
+            <div class="shopping-bag">
+                <a href="index.html">
+                    <img src="data:image/png;base64,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" alt="cart">
+                    Whishlist
+                    <div class="total-items-in-cart">
+                        0
+                    </div>
+                </a>
+            </div>
+        </header>
+    </div>
+    <div class="products-list">
+        <div class="products">
+            <!-- render porducts here -->
+        </div>
+        <div class="cart">
+            <div class="cart-header">
+                <div class="column1">Item</div>
+                <div class="column2">Unit price</div>
+                <div class="column3">Units</div>
+            </div>
+            <div class="cart-items">
+                <!-- render cart items here -->
+            </div>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    Subtotal (0 items): Rupee.0
+                </div>
+                <div class="checkout">
+                    Proceed to checkout
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const porductsListEl = document.querySelector(".products-list");
+        const seeMoreBtn = document.querySelector(".see-more-btn");
+
+        seeMoreBtn.addEventListener('click', () => {
+            porductsListEl.scrollIntoView({behavior: "smooth"})
+        })
+    </script>
+
+    <script src="product.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
